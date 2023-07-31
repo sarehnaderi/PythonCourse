@@ -1,60 +1,70 @@
 #Calculater
 
+import math
+
 op = input("Enter Your required operation (+ , - , * , / , cos , sin , tan , cot , ! , sqrt):")
 
 if op == "+":
-    num1 = int(input("Enter number 1:"))
-    num2 = int(input("Enter number 2:"))
+    num1 = float(input("Enter number 1:"))
+    num2 = float(input("Enter number 2:"))
     result = num1 + num2
 
 if op == "-":
-    num1 = int(input("Enter number 1:"))
-    num2 = int(input("Enter number 2:"))
+    num1 = float(input("Enter number 1:"))
+    num2 = float(input("Enter number 2:"))
     result = num1 - num2
 
 if op == "*":
-    num1 = int(input("Enter number 1:"))
-    num2 = int(input("Enter number 2:"))
+    num1 = float(input("Enter number 1:"))
+    num2 = float(input("Enter number 2:"))
     result = num1 * num2
 
 if op == "/":
-    num1 = int(input("Enter number 1:"))
-    num2 = int(input("Enter number 2:"))
+    num1 = float(input("Enter number 1:"))
+    num2 = float(input("Enter number 2:"))
     if num2 == 0:
         result = "NOT DEFINED"
     else:
         result = num1 / num2
 
-import math
-
 if op == "cos":
-    num = int(input("Enter your number:"))
-    result = math.Cos(num)
+    degrees = float(input("Enter your angle in degrees:"))
+    radian = degrees * math.pi/180
+    result = math.cos(radian)
 
 if op == "sin":
-    num = int(input("Enter your number:"))
-    result = math.sin(num)
+    degrees = float(input("Enter your angle in degrees:"))
+    radian = degrees * math.pi/180
+    result = math.sin(radian)
 
 if op == "tan":
-    num = int(input("Enter your number:"))
-    if math.cos(num)==0:
+    degrees = float(input("Enter your angle in degrees:"))
+    radian = degrees * math.pi/180
+    if math.cos(radian)==0:
         result = "NOT DEFINED"
     else:
-        result = math.tan(num)
+        result = math.tan(radian)
 
 if op == "cot":
-    num = int(input("Enter your number:"))
-    if math.sin(num)==0:
+    degrees = float(input("Enter your angle in degrees:"))
+    radian = degrees * math.pi/180
+    if math.sin(radian)==0:
         result = "NOT DEFINED"
     else:
-        result = math.cot(num)
+        result = math.cot(radian)
 
 if op == "!":
     num = int(input("Enter your number:"))
     result = math.factorial(num)
 
 if op == "sqrt":
-    num = int(input("Enter your number:"))
-    result = math.sqrt(num)
+    num = float(input("Enter your number:"))
+    if num >= 0 :
+        result = math.sqrt(num)
+    else:
+        result = "Error! Enter a non-negative number."
+
+else:
+    print("Error! Please enter a defined operation")
 
 print("Your answer:",result)
