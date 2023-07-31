@@ -10,11 +10,12 @@ start = int(input("Enter number 1 to start the game:"))
 if start == 1:
     x = random.choice([1,2,3,4,5,6])
     print("Result: ",x)
-    if x == 6:
-        print("Congratulation! You got 6! Here are your award's results:" )
-        for i in range(2):
-            x = random.choice([1,2,3,4,5,6])
-            print(x)
-
+if x == 6:
+    print("Congratulation! You got 6! Here are your award's results:" )
+    award_1 = random.choice([1,2,3,4,5,6])
+    print("Here is your award roll:",award_1)
+    if award_1 == 6:
+        award_2 = random.choice([1,2,3,4,5,6])
+        print("Wow you got 6 again! Here is your second award roll:",award_2)
 if start != 1 :
     print("Invalid choice. Please Enter number 1.")
