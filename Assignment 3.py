@@ -11,9 +11,8 @@ if start == 1:
     x = random.choice([1,2,3,4,5,6])
     print("Result: ",x)
 if x == 6:
-    print("Congratulation! You got 6! Here are your award's results:" )
     award_1 = random.choice([1,2,3,4,5,6])
-    print("Here is your award roll:",award_1)
+    print("Congratulation! You got 6! Here is your award roll:" )
     if award_1 == 6:
         award_2 = random.choice([1,2,3,4,5,6])
         print("Wow you got 6 again! Here is your second award roll:",award_2)
